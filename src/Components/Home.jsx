@@ -1,32 +1,36 @@
 import React from 'react'
 import styles from './Home.module.css'
-import TaskForm from './TaskForm'
+import TaskCreatorForm from './TaskCreatorForm'
+import Head from './Head'
 
-import { DatabaseContext } from './Database';
+import { AppContext } from './Database';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  const {currentUser, setCurrentUser} = React.useContext(DatabaseContext);
+  const {loggedInUser, setLoggedInUser} = React.useContext(AppContext);
   const navigate = useNavigate();
+
   React.useEffect(() => {
-    if ((currentUser === null)) {
+    if ((loggedInUser === null)) {
       navigate("/");
     }
-  }, [currentUser, navigate]);
-  if ((currentUser === null)) {
-    return null; 
-  }
-  
+  }, [loggedInUser]);
+
   function handleClick(){
-    setCurrentUser(null);
+    setLoggedInUser(null);
     navigate("/");
   }
+
+  if ((loggedInUser === null)) {
+    return null; 
+  }
   return (
-    <div className={styles.container}>
-        <div className={styles.formContainer}>
-            <p onClick={handleClick}>Exit</p>
-            <h4>Create a new task</h4>
-            <TaskForm/>
+    <div className={styles.homePage}>
+        <Head title={"Task list | Home"} description={"Task list | Home"}/>
+        <div className={styles.homeFormContainer}>
+            <p onClick={handleClick} className={styles.homeText}>Exit</p>
+            <h4 className={styles.homeTitle}>Create a new task</h4>
+            <TaskCreatorForm/>
         </div>
     </div>
   )

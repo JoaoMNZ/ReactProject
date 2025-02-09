@@ -1,0 +1,122 @@
+.taskDetailContainer{
+    background-color: var(--cor-10);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskDetailFormContainer{
+    width: 600px;
+    padding: 32px;
+    box-sizing: border-box;
+    background-color: var(--cor-2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    min-height: auto; 
+    border-radius: 6px;
+}
+
+.taskDetailForm input{
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    color: var(--cor-1);
+    background-color: var(--cor-10);
+    border-radius: 6px;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+}
+
+.taskDetailFormContainer input:focus{
+    background-color: var(--cor-9);
+    border: 1px solid var(--cor-10);
+    outline: none;
+}
+
+.taskDetailFormContainer button{
+    display: none;
+}
+
+
+.taskDetailHeader{
+    display: flex;
+    gap: 16px;
+}
+
+.taskDetailFormContainer h5{
+    font-family: 'Roboto';
+    font-size: 2rem;
+    text-align: center;
+}
+
+.taskDetailFormContainer .taskDetailHeaderText{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    text-decoration: underline;
+    color: var(--cor-10);
+    cursor: pointer;
+}
+
+.taskDetailFormContainer .taskDetailHeaderText:hover{
+    color: var(--cor-8);
+}
+
+.taskDetailForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.taskDetailFormDescription{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    background-color: var(--cor-10);
+    color: var(--cor-2);
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-radius: 6px;
+    min-height: auto;
+    word-wrap: break-word;
+}
+
+.taskDetailFormText{
+    font-size: 1rem;
+    font-family: "Roboto";
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .taskDetailFormContainer {
+        width: 90%; 
+        padding: 40px; 
+    }
+
+    .taskDetailFormContainer {
+        gap: 0.875rem;
+    }
+
+    .taskDetailForm input{
+        padding: 10px 12px; 
+        font-size: 1rem;
+    }
+
+    .taskDetailFormDescription, .taskDetailFormDescription, .taskDetailFormText{ 
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskDetailForm input{
+        font-size: 0.875rem;
+    }
+
+    .taskDetailFormDescription, .taskDetailFormDescription, .taskDetailFormText{ 
+        font-size: 0.75rem;
+    }
+}

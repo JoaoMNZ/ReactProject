@@ -1,17 +1,19 @@
 import styles from './Auth.module.css'
 import React from 'react'
-import UserForm from './UserForm'
-import { Link } from 'react-router-dom';
+import AuthForm from './AuthForm'
+import { Link } from 'react-router-dom'
+import Head from './Head'
 
-const Auth = ({choice}) => {
+const Auth = ({authType}) => {
   return (
-    <div className={styles.container}>
-        <div className={styles.formContainer}>
-            <h4>{choice}</h4>
-            <UserForm choice={choice}/>
-            {choice === "Log in" ? 
-            <p>Don't have an account? <Link to="register"><span>Sign up</span></Link></p> : 
-            <p>Already have an account? <Link to="/"><span>Log in</span></Link></p>}
+    <div className={styles.authPage}>
+      <Head title={`Task list | ${authType}`} description={`Task list | ${authType}`}/>
+        <div className={styles.authFormContainer}>
+            <h4 className={styles.authTitle}>{authType}</h4>
+            <AuthForm authType={authType}/>
+            {authType === "Log in" ? 
+            <p className={styles.authLinkText}>Don't have an account? <Link to="register"><span className={styles.authLink}>Sign up</span></Link></p> : 
+            <p className={styles.authLinkText}>Already have an account? <Link to="/"><span className={styles.authLink}>Log in</span></Link></p>}
         </div>
     </div>
   )

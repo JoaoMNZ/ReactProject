@@ -1,0 +1,87 @@
+.authForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.authInput{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    color: var(--cor-10);
+    background-color: var(--cor-1);
+    border: 1px solid var(--cor-2);
+    padding: 12px 16px;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.authInput:focus{
+    outline: none;
+    background-color: var(--cor-0);
+    border: 1px solid var(--cor-1);
+    border-color: var(--cor-4);
+}
+
+.authButton {
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: var(--cor-10);
+    color: var(--cor-1);
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.authButton:hover{
+    background-color: var(--cor-9);
+    color: var(--cor-2);
+}
+
+.authMessage{
+    font-size: 1rem;
+    font-family: 'Roboto';
+    color: var(--cor-10);
+}
+
+@media (max-width: 768px) {
+    .authForm {
+        gap: 0.75rem;
+    }
+
+    .authInput {
+        padding: 10px 12px; 
+        font-size: 0.875rem;
+    }
+
+    .authButton {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+        padding: 10px 12px; /* Reduz o padding */
+    }
+
+    .authMessage {
+        font-size: 0.875rem; /* Reduz o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    .authForm {
+        gap: 0.5rem; /* Reduz ainda mais o espaçamento */
+    }
+
+    .authInput {
+        font-size: 0.75rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .authButton {
+        font-size: 0.875rem; /* Reduz o tamanho da fonte */
+    }
+
+    .authMessage {
+        font-size: 0.75rem; /* Reduz o tamanho da fonte */
+    }
+}

@@ -1,22 +1,22 @@
 import './App.css'
-import Auth from "./Components/Auth";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { DatabaseStorage } from './Components/Database';
+import { AppProvider } from './Components/Database';
+import Auth from "./Components/Auth";
 import Home from './Components/Home';
-import Task from './Components/Task';
+import TaskDetail from './Components/TaskDetail';
 
 function App() {
   return (
-    <DatabaseStorage>
+    <AppProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Auth choice="Log in"/>} />
-          <Route path="register" element={<Auth choice="Sign up"/>} />
+          <Route path="/" element={<Auth authType="Log in"/>} />
+          <Route path="register" element={<Auth authType="Sign up"/>} />
           <Route path="home" element={<Home/>} />
-          <Route path="task/:id" element={<Task />} />
+          <Route path="task/:id" element={<TaskDetail />} />
         </Routes>
       </BrowserRouter>
-    </DatabaseStorage>
+    </AppProvider>
   )
 }
 

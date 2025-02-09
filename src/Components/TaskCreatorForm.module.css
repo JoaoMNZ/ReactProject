@@ -1,0 +1,147 @@
+.taskCreatorForm{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.taskCreatorInput{
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    color: var(--cor-10);
+    background-color: var(--cor-1);
+    padding: 12px 16px;
+    border-radius: 6px 0px 0px 6px;
+    width: 80%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.taskCreatorInput:focus{
+    outline: none;
+    background-color: var(--cor-0);
+}
+
+.taskCreatorButton {
+    padding: 12px 16px;
+    width: 20%;
+    border-radius: 0px 6px 6px 0px;
+    background-color: var(--cor-10);
+    color: var(--cor-1);
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.taskCreatorButton:hover{
+    background-color: var(--cor-9);
+    color: var(--cor-2);
+}
+
+.taskCreatorUl{
+    align-self: center;
+    width: 100%;
+}
+
+.taskCreatorLi{
+    list-style: none;
+    padding: 12px 16px;
+    background-color: var(--cor-10);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskCreatorLi:nth-child(even) {
+    background: var(--cor-0);
+    color: var(--cor-10);
+}
+
+.taskCreatorLi a{
+    font-size: 1rem;
+    font-family: 'Roboto';
+    color: var(--cor-1);
+    text-decoration: none;
+}
+
+  
+.taskCreatorLi:nth-child(even) a {
+    color: var(--cor-10);
+}
+
+.taskCreatorLi a:hover{
+    color: var(--cor-3);
+}
+
+  
+.taskCreatorLi:nth-child(even) a:hover {
+    color: var(--cor-8);
+}
+
+.taskCreatorLi span {
+  border-color: var(--cor-0);
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  height: 14px;
+  width: 7px;  
+  cursor: pointer;
+}
+  
+.taskCreatorLi span:hover {
+    border-color: var(--cor-3);
+}
+  
+.taskCreatorLi:nth-child(even) span {
+    border-color: var(--cor-10);
+}
+
+.taskCreatorLi:nth-child(even) span:hover {
+    border-color: var(--cor-7);
+}
+
+@media (max-width: 800px) {
+    .taskCreatorForm {
+        gap: 1.5rem;
+    }
+
+    .taskCreatorInput, .taskCreatorButton {
+        padding: 10px 12px; 
+        font-size: 1rem;
+    }
+
+    .taskCreatorLi {
+        padding: 10px 12px; 
+    }
+
+    .taskCreatorLi a {
+        font-size: 0.875rem;
+    }
+
+    .taskCreatorLi span {
+        height: 12px;
+        width: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskCreatorForm {
+        gap: 1rem; 
+    }
+
+    .taskCreatorInput, .taskCreatorButton {
+        font-size: 0.75rem;
+    }
+
+    .taskCreatorLi a {
+        font-size: 0.75rem;
+    }
+
+    .taskCreatorLi span {
+        height: 10px;
+        width: 5px;
+    }
+}

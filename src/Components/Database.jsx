@@ -1,19 +1,16 @@
 import React from 'react';
 
-export const DatabaseContext = React.createContext();
+export const AppContext = React.createContext();
 
-export const DatabaseStorage = ({ children }) => {
+export const AppProvider = ({ children }) => {
     const [users, setUsers] = React.useState([]);
-
-    const [tasks, setTasks] = React.useState(new Map())
-
-    const [currentUser, setCurrentUser] = React.useState(null);
-
-    const [idCounter, setIdCounter] = React.useState(0);
+    const [userIdCounter, setUserIdCounter] = React.useState(0);
+    const [loggedInUser, setLoggedInUser] = React.useState(null);
+    const [usersTasksMap, setUsersTasksMap] = React.useState(new Map())
 
     return (
-        <DatabaseContext.Provider value={ {users, setUsers, tasks, setTasks, currentUser, setCurrentUser, idCounter, setIdCounter} }>
+        <AppContext.Provider value={ {users, setUsers, userIdCounter, setUserIdCounter, loggedInUser, setLoggedInUser, usersTasksMap, setUsersTasksMap} }>
             {children}
-        </DatabaseContext.Provider>
+        </AppContext.Provider>
     );
 };
