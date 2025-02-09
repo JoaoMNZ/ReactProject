@@ -1,0 +1,42 @@
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-10);
+}
+
+.formContainer{
+    width: 600px;
+    padding: 80px;
+    box-sizing: border-box;
+    background-color: var(--cor-2);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container h4{
+    font-family: Roboto;
+    font-size: 2.125rem;
+    font-weight: normal;
+    color: var(--cor-10);
+}
+
+.container p{
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--cor-8);
+}
+
+.container p span{
+    color: var(--cor-10);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.container p span:hover{
+    color: var(--cor-8);
+}
